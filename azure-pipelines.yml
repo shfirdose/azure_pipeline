@@ -17,8 +17,9 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool: vilasagentpool
-    demands: Agent.Version -equals 4.248.0    
+    pool: 
+      name: vilasagentpool
+      demands: Agent.Version -equals 4.248.0    
 #      vmImage: ubuntu-latest
     steps:
     - task: Maven@4
