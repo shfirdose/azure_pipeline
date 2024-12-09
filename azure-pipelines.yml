@@ -5,6 +5,11 @@
 trigger:
 - main
 
+pool: 
+  name: vilasagentpool
+  demands: Agent.Version -equals 4.248.0
+
+
 resources:
 - repo: self
 
@@ -17,9 +22,9 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool: 
-      name: vilasagentpool
-      demands: Agent.Version -equals 4.248.0    
+#    pool: 
+#      name: vilasagentpool
+#      demands: Agent.Version -equals 4.248.0    
 #      vmImage: ubuntu-latest
     steps:
     - task: Maven@4
