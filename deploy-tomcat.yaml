@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tomcat-cd
-        image: vilasvarghese/java-web-app-cicd:latest
+        image: vilasvarghese/azure_pipeline:latest
         ports:
         - containerPort: 8080
         imagePullPolicy: Always

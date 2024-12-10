@@ -8,3 +8,6 @@ Check if Docker can be run without root:
 $ docker run hello-world
 
 sudo chmod 777 /var/run/docker.sock
+
+Add a seperate user defined capability like 
+	maven: true 
