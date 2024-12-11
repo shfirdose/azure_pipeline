@@ -81,8 +81,7 @@ jobs:
         
     - name: Push to DockerHub
       run: docker push vilasvarghese/azure_pipeline
-
-      
+ 
     - name: Azure Kubernetes set context
       uses: Azure/aks-set-context@v1
       with:
