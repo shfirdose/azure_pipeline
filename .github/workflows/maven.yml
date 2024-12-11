@@ -80,7 +80,7 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
         
     - name: Push to DockerHub
-      run: docker push shfirdose/azure_pipeline
+      run: docker push shama24/azure_pipeline
  
     - name: Azure Kubernetes set context
       uses: Azure/aks-set-context@v1
