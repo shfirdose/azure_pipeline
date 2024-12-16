@@ -1,3 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: tomcat-cd
+  type: NodePort 
+  ports:
+  - nodePort: 31000
+    port: 80
+    targetPort: 8080
+---
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,7 +31,7 @@ spec:
     spec:
       containers:
       - name: tomcat-cd
-        image: vilasvarghese/azure_pipeline:latest
+        image: shama24/azure_pipeline:latest
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
