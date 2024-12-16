@@ -22,3 +22,18 @@ jobs:
       uses: azure/login@v2
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+    - name: Set up kubelogin for non-interactive login
+      uses: azure/use-kubelogin@v1
+      with:
+        kubelogin-version: v0.0.25
+    - name: Get K8s context
+      uses: azure/aks-set-context@v3
+      with:
+        admin: "false"
+        cluster-name: "cluster-settling-hare"
+        resource-group: "rg-worthy-redbird"
+        use-kubelogin: "true"
+      # Deploy to k8s cluster
+    - name: Deploy to Kubernetes cluster
+      run: kubectl apply -f deploy-tomcat.yaml
