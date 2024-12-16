@@ -1,4 +1,4 @@
-name: Azure Deploy
+name: Maven build and push to Docker 
 
 
 on:
